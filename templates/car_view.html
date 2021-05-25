@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" align="center">
+    <tr>
+        <th colspan="5">Car Detail</th>
+    </tr>
+    <tr>
+
+        <th>Car Company</th>
+        <th>Car Name</th>
+        <th>Car Price</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+
+    {% for car in car_data %}
+    <tr>
+        <td>{{car.car_company}}</td>
+        <td>{{car.car_name}}</td>
+        <td>{{car.car_price}}</td>
+        <td><a href="/car_update/{{car.id}}">Update</a></td>
+        <td><a href="/car_delete/{{car.id}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+
+    <tr>
+        <td colspan="5" align="center">
+        <a href="/car_add">Add New</a>
+        </td>
+    </tr>
+</table>
+
+
+</body>
+</html>
